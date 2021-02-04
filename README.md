@@ -9,3 +9,20 @@ In this repo I collect [minimal reproducible examples](https://stackoverflow.com
 To see all failed packages check [branches](https://github.com/zaverden/snow-failed-pkgs/branches/all).
 
 Check `packages.json` to find what versions of packages are used (all versions are fix).
+
+# `react-s-alert`
+
+`snowpack` exports this module wrong way.
+
+```javascript
+import Alert from "react-s-alert";
+console.log(Alert);
+
+// Expected:
+// <component>
+//
+// Actual:
+// {
+//   default: <component>
+// }
+```
